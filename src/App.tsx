@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './components/atoms/Header'
+import Header from './components/atoms/Header/Header'
 
 import { BodyStyled } from './style.module'
 
