@@ -8,7 +8,7 @@ describe('teste ', () => {
   it('teste', () => {
     render(<App />)
 
-    const h1Node = screen.getByText('New Project')
+    const h1Node = screen.getByText('NaruChess')
     expect(h1Node).toBeInTheDocument()
   })
 })
