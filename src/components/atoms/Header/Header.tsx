@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { HeaderStyled } from './style.module'
 
 const Header = () => {
