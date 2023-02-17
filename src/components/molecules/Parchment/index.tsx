@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import ParchmentCenter, { TParchmentLabel } from '../ParchmentCenter'
 import ParchmentRoll from '../ParchmentRoll'
 
@@ -21,6 +23,7 @@ const Parchment = ({ height, width, backgroundColor, parchmentCenter }: IParchme
         backgroundColor={parchmentCenter.backgroundColor}
         borderSize={parchmentCenter.borderSize}
         borderColor={parchmentCenter.borderColor}
+        textSize={parchmentCenter.textSize}
       />
       <ParchmentRoll height={height} left='14px' />
     </ParchmentBody>
@@ -29,9 +32,30 @@ const Parchment = ({ height, width, backgroundColor, parchmentCenter }: IParchme
 
 export default Parchment
 
-//
-// width={parchmentLabel.width}
-// backgroundColor={parchmentLabel.backgroundColor}
-// borderColor={parchmentLabel.borderColor}
-// borderSize={parchmentLabel.borderSize}
-// textContent={parchmentLabel.textContent}
+Parchment.propTypes = {
+  height: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  parchmentCenter: {
+    width: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string,
+    borderColor: PropTypes.string,
+    borderSize: PropTypes.string,
+    textContent: PropTypes.string.isRequired,
+    textSize: PropTypes.string.isRequired,
+  },
+}
+
+Parchment.defaultProps = {
+  height: '',
+  width: '',
+  backgroundColor: '',
+  parchmentCenter: {
+    width: 'Required',
+    backgroundColor: 'Required',
+    borderColor: 'none',
+    borderSize: '0px',
+    textContent: 'Required',
+    textSize: 'Required',
+  },
+}
