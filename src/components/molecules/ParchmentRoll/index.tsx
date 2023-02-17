@@ -1,7 +1,14 @@
 import React from 'react'
 
-const ParchmentRoll = () => {
-  return <div />
+import { ParchmentRollStyled } from './style.module'
+
+export interface IParchmentRoll {
+  height: string
+  left: string
+}
+
+const ParchmentRoll = ({ height, left }: IParchmentRoll) => {
+  return <ParchmentRollStyled height={height} left={left} />
 }
 
 export default ParchmentRoll
