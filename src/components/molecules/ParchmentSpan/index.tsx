@@ -1,13 +1,14 @@
 import React from 'react'
 
-import { SpanStyled } from './style.module'
+import { DivStyled } from './style.module'
 
-interface IParchmentSpan {
+export interface IParchmentSpan {
   textContent?: string
+  textSize: string
 }
 
-const ParchmentSpan = ({ textContent }: IParchmentSpan) => {
-  return <SpanStyled> {textContent} </SpanStyled>
+const ParchmentSpan = ({ textContent, textSize }: IParchmentSpan) => {
+  return <DivStyled textSize={textSize}> {textContent} </DivStyled>
 }
 
 export default ParchmentSpan

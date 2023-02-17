@@ -9,6 +9,7 @@ export type TParchmentLabel = {
   borderColor?: string
   borderSize?: string
   textContent: string
+  textSize: string
 }
 
 const ParchmentCenter = ({
@@ -17,6 +18,7 @@ const ParchmentCenter = ({
   backgroundColor = 'white',
   borderColor = 'transparent',
   borderSize = '0px',
+  textSize,
 }: TParchmentLabel) => {
   return (
     <ParchmentLabelCenter
@@ -25,7 +27,7 @@ const ParchmentCenter = ({
       borderColor={borderColor}
       borderSize={borderSize}
     >
-      <ParchmentSpan textContent={textContent} />
+      <ParchmentSpan textContent={textContent} textSize={textSize} />
     </ParchmentLabelCenter>
   )
 }

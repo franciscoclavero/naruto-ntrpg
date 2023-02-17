@@ -13,4 +13,8 @@ export const ParchmentLabelCenter = styled.div<IParchmentLabel>`
   width: ${(props) => props.width};
   border-left: ${(props) => props.borderSize} solid ${(props) => props.borderColor};
   border-right: ${(props) => props.borderSize} solid ${(props) => props.borderColor};
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 `
