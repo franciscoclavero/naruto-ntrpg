@@ -8,4 +8,5 @@ export const HeaderStyled = styled.header`
   height: 50px;
   line-height: 50px;
   text-align: center;
+  font-family: 'Inter', sans-serif;
 `
