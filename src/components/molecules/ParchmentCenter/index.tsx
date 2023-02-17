@@ -1,4 +1,5 @@
 import React from 'react'
+import ParchmentSpan from '../ParchmentSpan'
 
 import { ParchmentLabelCenter } from './style.module'
 
@@ -24,7 +25,7 @@ const ParchmentCenter = ({
       borderColor={borderColor}
       borderSize={borderSize}
     >
-      {textContent}
+      <ParchmentSpan textContent={textContent} />
     </ParchmentLabelCenter>
   )
 }
