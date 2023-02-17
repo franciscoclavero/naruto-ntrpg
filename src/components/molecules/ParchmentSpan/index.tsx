@@ -1,7 +1,13 @@
 import React from 'react'
 
-const ParchmentSpan = () => {
-  return <span>texto </span>
+import { SpanStyled } from './style.module'
+
+interface IParchmentSpan {
+  textContent?: string
+}
+
+const ParchmentSpan = ({ textContent }: IParchmentSpan) => {
+  return <SpanStyled> {textContent} </SpanStyled>
 }
 
 export default ParchmentSpan
