@@ -15,6 +15,7 @@ interface IMap {
   numberLines: number
   numberColumns: number
   widthSize: number | string
+  isStorybook: boolean
   typeItens: TItens[]
 }
 
@@ -22,7 +23,7 @@ type TMap = {
   [key: string]: string
 }
 
-const Map = ({ numberLines, numberColumns, widthSize, typeItens }: IMap) => {
+const Map = ({ numberLines, numberColumns, widthSize, typeItens, isStorybook = false }: IMap) => {
   const [mapDrawing, setMapDrawing] = useState<TMap[]>([])
   const map: TMap[] = []
 
@@ -42,7 +43,7 @@ const Map = ({ numberLines, numberColumns, widthSize, typeItens }: IMap) => {
   }, [])
 
   return (
-    <MapStyled height={widthSize} width={widthSize}>
+    <MapStyled height={widthSize} width={widthSize} storybook={isStorybook}>
       {mapDrawing.map((item) => {
         return Object.entries(item).map(([key, value]) => {
           return (
@@ -66,6 +67,7 @@ Map.proptypes = {
   numberLines: PropTypes.number.isRequired,
   numberColumns: PropTypes.number.isRequired,
   widthSize: PropTypes.string.isRequired,
+  isStorybook: PropTypes.bool,
   typeItens: {
     posX: PropTypes.number.isRequired,
     posY: PropTypes.number.isRequired,
@@ -77,6 +79,7 @@ Map.defaultProps = {
   numberLines: 0,
   numberColumns: 0,
   widthSize: '',
+  isStorybook: false,
   typeItens: {
     posX: 0,
     posY: 0,
