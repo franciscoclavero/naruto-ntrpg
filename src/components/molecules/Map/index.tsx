@@ -4,17 +4,24 @@ import MapField from '../MapField'
 
 import { MapStyled } from './style.module'
 
+type TItens = {
+  posX: number
+  posY: number
+  sprite: string
+}
+
 interface IMap {
   numberLines: number
   numberColumns: number
   widthSize: number | string
+  typeItens: TItens[]
 }
 
 type TMap = {
   [key: string]: string
 }
 
-const Map = ({ numberLines, numberColumns, widthSize }: IMap) => {
+const Map = ({ numberLines, numberColumns, widthSize, typeItens }: IMap) => {
   const [mapDrawing, setMapDrawing] = useState<TMap[]>([])
   const map: TMap[] = []
 
@@ -23,10 +30,14 @@ const Map = ({ numberLines, numberColumns, widthSize }: IMap) => {
       const mapLine: TMap = {}
       for (let mapY = 0; mapY < numberColumns; mapY += 1) {
         const key = `${mapX}_${mapY}`
-        mapLine[key] = '_'
+        const item = typeItens.findIndex((item) => item.posX === mapX && item.posY === mapY)
+
+        mapLine[key] = ''
+        if (item > -1) mapLine[key] = typeItens[item].sprite
       }
       map.push(mapLine)
     }
+    console.log(map)
     setMapDrawing(map)
   }, [])
 
@@ -40,6 +51,7 @@ const Map = ({ numberLines, numberColumns, widthSize }: IMap) => {
               numberColumns={numberColumns}
               numberLines={numberLines}
               widthSize={widthSize}
+              sprite={value}
             />
           )
         })
