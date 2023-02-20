@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 import MapField from '../MapField'
 
@@ -61,3 +62,25 @@ const Map = ({ numberLines, numberColumns, widthSize, typeItens }: IMap) => {
 }
 
 export default Map
+
+Map.proptypes = {
+  numberLines: PropTypes.number.isRequired,
+  numberColumns: PropTypes.number.isRequired,
+  widthSize: PropTypes.string.isRequired,
+  typeItens: {
+    posX: PropTypes.number.isRequired,
+    posY: PropTypes.number.isRequired,
+    sprite: PropTypes.string.isRequired,
+  },
+}
+
+Map.defaultProps = {
+  numberLines: 0,
+  numberColumns: 0,
+  widthSize: '',
+  typeItens: {
+    posX: 0,
+    posY: 0,
+    sprite: '',
+  },
+}
