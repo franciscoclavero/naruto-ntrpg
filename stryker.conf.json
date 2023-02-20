@@ -4,6 +4,6 @@
     "src/components/**/*.tsx",
     "!src/components/**/style.module.tsx",
     "!src/components/**/index.test.tsx",
-    "!src/components/**/index.stories.tsx"
+    "!src/components/**/index.stories.*"
   ]
 }

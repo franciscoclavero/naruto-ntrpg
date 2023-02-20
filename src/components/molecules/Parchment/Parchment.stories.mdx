@@ -1,0 +1,56 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Parchment from './'
+
+<Meta title='Components/Parchment' component={Parchment} />
+
+# Pergaminho
+
+O pergaminho é um componente estético, podendo ter informação ou não.
+
+<ArgsTable of={Parchment} />
+
+Pergaminho com texto
+
+<Canvas>
+  <Story
+    name='Parchment Component'
+    args={{
+      backgroundColor: '#1C2633',
+      height: '75px',
+      width: '252px',
+      parchmentCenter: {
+        textContent: '地',
+        width: '92px',
+        backgroundColor: '#FFF',
+        borderColor: '#FFF',
+        borderSize: '0px',
+        textSize: '50px',
+      },
+    }}
+  >
+    {(args) => <Parchment {...args} />}
+  </Story>
+</Canvas>
+
+Pergaminho sem texto
+
+<Canvas>
+  <Story
+    name='Parchment Component Empty'
+    args={{
+      backgroundColor: '#925362',
+      height: '50px',
+      width: '300px',
+      parchmentCenter: {
+        textContent: '',
+        width: '92px',
+        backgroundColor: '#E4D79A',
+        borderSize: '15px',
+        borderColor: '#2F3348',
+        textSize: '0px',
+      },
+    }}
+  >
+    {(args) => <Parchment {...args} />}
+  </Story>
+</Canvas>
