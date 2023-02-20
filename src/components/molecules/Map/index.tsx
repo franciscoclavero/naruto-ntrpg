@@ -38,7 +38,6 @@ const Map = ({ numberLines, numberColumns, widthSize, typeItens }: IMap) => {
       }
       map.push(mapLine)
     }
-    console.log(map)
     setMapDrawing(map)
   }, [])
 
