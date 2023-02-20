@@ -1,9 +1,21 @@
 import React from 'react'
+import TimerArea from '../TimerArea'
+import TimerCenter from '../TimerCenter'
+import TimerRoll from '../TimerRoll'
 
-import { TimerBody } from './style.module'
+import { TimeBody, TimerParchmentBody } from './style.module'
 
 const Timer = () => {
-  return <TimerBody>Timer</TimerBody>
+  return (
+    <TimeBody>
+      <TimerParchmentBody>
+        <TimerRoll top='-4px' />
+        <TimerCenter />
+        <TimerRoll top='4px' />
+      </TimerParchmentBody>
+      <TimerArea />
+    </TimeBody>
+  )
 }
 
 export default Timer
