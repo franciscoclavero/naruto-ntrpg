@@ -78,11 +78,11 @@ Map.proptypes = {
 Map.defaultProps = {
   numberLines: 0,
   numberColumns: 0,
-  widthSize: '',
+  widthSize: '400px',
   isStorybook: false,
   typeItens: {
     posX: 0,
     posY: 0,
-    sprite: 1,
+    sprite: 'characters/naruto.jpg',
   },
 }
