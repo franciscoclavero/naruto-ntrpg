@@ -11,7 +11,7 @@ export const MapFieldStyled = styled.div<IMapField>`
     }
     return sprite
   }};
-  border: 1px solid black;
+  outline: 1px solid black;
   height: calc(${(props) => props.widthSize} / ${(props) => props.numberColumns});
   width: calc(${(props) => props.widthSize} / ${(props) => props.numberLines});
 `

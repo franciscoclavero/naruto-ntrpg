@@ -81,6 +81,6 @@ Map.defaultProps = {
   typeItens: {
     posX: 0,
     posY: 0,
-    sprite: '',
+    sprite: 1,
   },
 }

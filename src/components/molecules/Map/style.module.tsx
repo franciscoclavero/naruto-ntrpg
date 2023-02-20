@@ -9,7 +9,7 @@ export const MapStyled = styled.div<IMapStyled>`
   border: 4px solid black;
   display: flex;
   flex-wrap: wrap;
-  height: calc(${(props) => props.height} + 8px);
+  height: ${(props) => props.height};
   margin: auto;
-  width: calc(${(props) => props.width} + 8px);
+  width: ${(props) => props.width};
 `

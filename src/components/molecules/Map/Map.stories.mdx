@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Map from './'
+import MapField from '../MapField'
+
+<Meta title='Components/Mapa' component={Map} />
+
+# Mapa
+
+O mapa é onde todo o jogo vai ocorrer, ele é o responsável por mostrar a localização de todos os personagens e habilidades.
+
+<ArgsTable of={Map} />
+
+<Canvas>
+  <Story
+    name='Map Component'
+    args={{
+      numberLines: 3,
+      numberColumns: 3,
+      widthSize: '400px',
+      typeItens: [
+        {
+          posX: 1,
+          posY: 1,
+          sprite: 'naruto',
+        },
+      ],
+    }}
+  >
+    {(args) => <Map {...args} />}
+  </Story>
+</Canvas>
+
+Onde cada área do mapa recebe um field, como o componente abaixo:
+
+<Canvas>
+  <Story
+    name='MapField Component'
+    args={{
+      numberLines: 1,
+      numberColumns: 1,
+      widthSize: '50px',
+      sprite: '',
+    }}
+  >
+    {(args) => <MapField {...args} />}
+  </Story>
+</Canvas>
