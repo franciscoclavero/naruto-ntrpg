@@ -1,7 +1,13 @@
 import React from 'react'
 
-const TimerRoll = () => {
-  return <div />
+import { TimerRollStyled } from './style.module'
+
+export interface ITimerRoll {
+  top: string
+}
+
+const TimerRoll = ({ top }: ITimerRoll) => {
+  return <TimerRollStyled top={top} />
 }
 
 export default TimerRoll
