@@ -49,9 +49,4 @@ Timer.propTypes = {
   width: PropTypes.string.isRequired,
 }
 
-Timer.defaultProps = {
-  initialPosition: 10,
-  labelText: 'Your Turn',
-  time: 10,
-  width: '300px',
-}
+Timer.defaultProps = {}
