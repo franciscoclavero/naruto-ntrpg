@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { store } from '../../../redux/store'
+import { Provider } from 'react-redux'
+import Timer from './'
+
+<Meta title='Components/Contador' component={Timer} />
+
+# Timer
+
+O Timer vai mostrar o tempo restante até a vez do outro jogador
+
+<ArgsTable of={Timer} />
+
+<Canvas>
+  <Story
+    name='Timer Component'
+    args={{
+      initialPosition: 10,
+      labelText: 'Your Turn',
+      time: 10,
+      width: '300px',
+    }}
+  >
+    {(args) => (
+      <Provider store={store}>
+        <Timer {...args} />
+      </Provider>
+    )}
+  </Story>
+</Canvas>

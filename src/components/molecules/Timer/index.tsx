@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import {
   setTime,
@@ -40,3 +41,17 @@ const Timer = ({ initialPosition, labelText, time, width }: ITimer) => {
 }
 
 export default Timer
+
+Timer.propTypes = {
+  initialPosition: PropTypes.number.isRequired,
+  labelText: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
+  width: PropTypes.string.isRequired,
+}
+
+Timer.defaultProps = {
+  initialPosition: 10,
+  labelText: 'Your Turn',
+  time: 10,
+  width: '300px',
+}
