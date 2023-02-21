@@ -36,14 +36,14 @@ Parchment.propTypes = {
   height: PropTypes.string.isRequired,
   width: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
-  parchmentCenter: {
+  parchmentCenter: PropTypes.shape({
     width: PropTypes.string.isRequired,
     backgroundColor: PropTypes.string,
     borderColor: PropTypes.string,
     borderSize: PropTypes.string,
     textContent: PropTypes.string.isRequired,
     textSize: PropTypes.string.isRequired,
-  },
+  }),
 }
 
 Parchment.defaultProps = {
