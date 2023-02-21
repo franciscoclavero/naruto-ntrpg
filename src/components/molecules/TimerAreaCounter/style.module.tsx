@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 
 interface ITimerAreaCounter {
-  initialState: number
-  width: string
+  initialPosition: number
+  time: number
 }
 
 export const TimeAreaCounterStyled = styled.div<ITimerAreaCounter>`
   background-color: #f05321;
   height: 100%;
-  width: ${(props) => props.width};
+  width: calc((${(props) => props.initialPosition} / ${(props) => props.time}) * 100%);
+
+  transition: width ${(props) => props.time}s linear;
 `
 
 interface ITimerAreaText {
