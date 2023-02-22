@@ -20,4 +20,4 @@ jobs:
           yarn install
 
       - run: |
-          npx test
+          npx jest
