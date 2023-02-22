@@ -66,11 +66,11 @@ Map.proptypes = {
   numberLines: PropTypes.number.isRequired,
   numberColumns: PropTypes.number.isRequired,
   widthSize: PropTypes.string.isRequired,
-  typeItens: {
+  typeItens: PropTypes.shape({
     posX: PropTypes.number.isRequired,
     posY: PropTypes.number.isRequired,
     sprite: PropTypes.string.isRequired,
-  },
+  }),
 }
 
 Map.defaultProps = {
