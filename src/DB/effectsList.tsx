@@ -1,23 +1,19 @@
-export interface IItem {
-  id: number
-  name: string
-  sprite: string
-}
+import { IItem } from './charactersList'
 
-export const characters: IItem[] = [
+export const effectsList: IItem[] = [
   {
     id: 1,
-    name: 'Naruto',
+    name: 'Effect 1',
     sprite: 'assets/characters/naruto.jpg',
   },
   {
     id: 2,
-    name: 'Sasuke',
+    name: 'Effect 2',
     sprite: 'assets/characters/naruto.jpg',
   },
   {
     id: 3,
-    name: 'Sakura',
+    name: 'Effect 3',
     sprite: 'assets/characters/naruto.jpg',
   },
 ]
