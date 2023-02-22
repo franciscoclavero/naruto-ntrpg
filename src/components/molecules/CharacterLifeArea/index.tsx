@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CharacterLifeArea = () => {
-  return <div></div>
+  return <div>Life</div>
 }
 
 export default CharacterLifeArea
