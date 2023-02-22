@@ -1,7 +1,7 @@
 name: Execução de testes
 on:
   push:
-    branches: [main, develop]
+    branches: [feature/gitactions]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
