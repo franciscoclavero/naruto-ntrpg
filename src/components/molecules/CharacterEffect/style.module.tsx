@@ -6,6 +6,7 @@ export const CharacterEffectStyle = styled.div`
   cursor: pointer;
   height: 16px;
   margin-left: 4px;
+  margin-top: 4px;
   width: 16px;
 
   img {
