@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import CharacterDataArea from '../CharacterDataArea'
 import CharacterImage from '../CharacterImage'
 
@@ -20,3 +22,10 @@ const CharacterArea = ({ id, life, effectsIds }: ICharacter) => {
 }
 
 export default CharacterArea
+
+CharacterArea.proptypes = {
+  id: PropTypes.number.isRequired,
+  life: PropTypes.number.isRequired,
+  effectsIds: PropTypes.array.isRequired,
+}
+CharacterArea.defaultProps = {}

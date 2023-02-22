@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import CharacterArea from './'
+
+<Meta title='Components/Área do personagem' component={CharacterArea} />
+
+# Área do personagem
+
+Área onde mostra os buffs e debuffs, vida e nome do personagem em questão.
+
+<ArgsTable of={CharacterArea} />
+
+<Canvas>
+  <Story
+    name='CharacterArea Component'
+    args={{
+      id: 1,
+      life: 100,
+      effectsIds: [1, 2],
+    }}
+  >
+    {(args) => <CharacterArea {...args} />}
+  </Story>
+</Canvas>
