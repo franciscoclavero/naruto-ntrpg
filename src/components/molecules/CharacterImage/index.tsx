@@ -1,6 +1,6 @@
 import React from 'react'
 import { charactersList } from '../../../DB/charactersList'
-import { getCharacter } from '../../../functions/getCharacter'
+import { getItem } from '../../../functions/getItem'
 
 import { CharacterImageStyled } from './style.module'
 
@@ -9,7 +9,7 @@ interface IImageCharacter {
 }
 
 const CharacterImage = ({ id }: IImageCharacter) => {
-  const { sprite } = getCharacter(charactersList, id)
+  const { sprite } = getItem(charactersList, id)
   return <CharacterImageStyled src={sprite} />
 }
 
