@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CharacterEffectsArea = () => {
-  return <div></div>
+  return <div>Effects</div>
 }
 
 export default CharacterEffectsArea
