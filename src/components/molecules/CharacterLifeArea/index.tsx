@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { CharacterLifeStyled, LifeBar, TextLife } from './style.module'
 
-const CharacterLifeArea = () => {
-  const [life, setLife] = useState(40)
+interface ILife {
+  life: number
+}
 
+const CharacterLifeArea = ({ life }: ILife) => {
   return (
     <CharacterLifeStyled>
       <LifeBar life={life} />
