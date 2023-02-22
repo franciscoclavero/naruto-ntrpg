@@ -6,7 +6,7 @@ import CharacterImage from './'
 
 describe('CharacterImage component ', () => {
   it('- render', () => {
-    const { container } = render(<CharacterImage />)
+    const { container } = render(<CharacterImage id={1} />)
 
     const CharacterImageNodes = container.getElementsByTagName('img')
 
