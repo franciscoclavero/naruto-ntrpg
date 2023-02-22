@@ -1,9 +1,16 @@
 import React from 'react'
+import { charactersList } from '../../../DB/charactersList'
+import { getCharacter } from '../../../functions/getCharacter'
 
 import { CharacterImageStyled } from './style.module'
 
-const CharacterImage = () => {
-  return <CharacterImageStyled src='assets/characters/naruto.jpg' />
+interface IImageCharacter {
+  id: number
+}
+
+const CharacterImage = ({ id }: IImageCharacter) => {
+  const { sprite } = getCharacter(charactersList, id)
+  return <CharacterImageStyled src={sprite} />
 }
 
 export default CharacterImage
