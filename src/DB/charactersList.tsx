@@ -13,11 +13,11 @@ export const charactersList: IItem[] = [
   {
     id: 2,
     name: 'Sasuke',
-    sprite: 'assets/characters/naruto.jpg',
+    sprite: 'assets/characters/sasuke.png',
   },
   {
     id: 3,
     name: 'Sakura',
-    sprite: 'assets/characters/naruto.jpg',
+    sprite: 'assets/characters/sakura.png',
   },
 ]
