@@ -24,8 +24,8 @@ const StatusBarItemArea = ({ maxValue, actualValue, color }: IStatusBarItemArea)
 
   return (
     <StatusBarItemAreaStyled>
-      {colorList.map((item) => {
-        return <StatusBarItem key={item} color={item} />
+      {colorList.map((item, index) => {
+        return <StatusBarItem key={index} color={item} />
       })}
     </StatusBarItemAreaStyled>
   )
