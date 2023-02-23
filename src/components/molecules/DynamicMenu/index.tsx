@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAppSelector } from '../../../redux/hooks/useSelector'
 import DynamicMenuContentArea from '../DynamicMenuContentArea'
 import Parchment from '../Parchment'
 
@@ -14,8 +15,14 @@ export interface IDynamicOptions {
 }
 
 const DynamicMenu = ({ options }: IDynamicOptions) => {
+  const characterMenu = useAppSelector((store) => store.characterMenu)
+
   return (
-    <DynamicMenuArea>
+    <DynamicMenuArea
+      left={characterMenu.left}
+      top={characterMenu.top}
+      visible={characterMenu.visible}
+    >
       <Parchment
         width='300px'
         height='50px'
