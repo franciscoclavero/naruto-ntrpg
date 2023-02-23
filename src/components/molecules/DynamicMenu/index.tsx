@@ -1,18 +1,19 @@
 import React from 'react'
+import DynamicMenuContentArea from '../DynamicMenuContentArea'
 import Parchment from '../Parchment'
 
-import { DynamicMenuArea, DynamicMenuContentArea, DynamicMenuOption } from './style.module'
+import { DynamicMenuArea } from './style.module'
 
 type TDynamicOption = {
   contentText: string
   click: () => void
 }
 
-export interface IOptions {
+export interface IDynamicOptions {
   options: TDynamicOption[]
 }
 
-const DynamicMenu = ({ options }: IOptions) => {
+const DynamicMenu = ({ options }: IDynamicOptions) => {
   return (
     <DynamicMenuArea>
       <Parchment
@@ -28,15 +29,7 @@ const DynamicMenu = ({ options }: IOptions) => {
           textSize: '',
         }}
       />
-      <DynamicMenuContentArea>
-        {options.map((item) => {
-          return (
-            <DynamicMenuOption onClick={item.click} key={item.contentText}>
-              {item.contentText}
-            </DynamicMenuOption>
-          )
-        })}
-      </DynamicMenuContentArea>
+      <DynamicMenuContentArea options={options} />
     </DynamicMenuArea>
   )
 }
