@@ -1,23 +1,6 @@
-name: Execução de testes
-on:
-  push:
-    branches: [feature/gitactions]
-jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout do projeto
-        uses: actions/checkout@v3
+# name: Execução de testes
+# on:
+#   push:
+#     branches: [feature/gitactions]
+# jobs:
 
-      - name: Setup  Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install Dependencies
-        run: |
-          npm install
-          yarn install
-
-      - run: |
-          npx jest
