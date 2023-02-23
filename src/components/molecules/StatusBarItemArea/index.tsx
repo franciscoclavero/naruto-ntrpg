@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import StatusBarItem from '../StatusBarItem'
 
-import { StatusBarItemAreaStyled, StatusBarItem } from './style.module'
+import { StatusBarItemAreaStyled } from './style.module'
 
-interface IStatusBar {
+interface IStatusBarItemArea {
   maxValue: number
   actualValue: number
   color: string
 }
 
-const StatusBarItemArea = ({ maxValue, actualValue, color }: IStatusBar) => {
+const StatusBarItemArea = ({ maxValue, actualValue, color }: IStatusBarItemArea) => {
+  const [colorList, setColorList] = useState<string[]>([])
+
+  useEffect(() => {
+    const itens: string[] = []
+
+    for (let count = 1; count <= maxValue; count += 1) {
+      const actualColor = count <= actualValue ? color : '#fff'
+      itens.push(actualColor)
+    }
+    setColorList(itens)
+  }, [])
+
   return (
     <StatusBarItemAreaStyled>
-      <StatusBarItem />
-      <StatusBarItem />
-      <StatusBarItem />
-      <StatusBarItem />
+      {colorList.map((item) => {
+        return <StatusBarItem key={item} color={item} />
+      })}
     </StatusBarItemAreaStyled>
   )
 }
