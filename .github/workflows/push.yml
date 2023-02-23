@@ -2,7 +2,7 @@ name: Evitar push diretamente em main e develop
 on: [push]
 jobs:
   check-bats-version:
+    if: github.repository == 'feature/gitactions'
     runs-on: ubuntu-latest
     steps:
-      - if: GITHUB_REF_NAME == feature/gitactions
       - run: exit 1
