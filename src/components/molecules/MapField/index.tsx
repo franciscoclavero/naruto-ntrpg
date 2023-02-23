@@ -16,7 +16,9 @@ const MapField = ({ numberLines, numberColumns, widthSize, sprite }: IMapField) 
       numberLines={numberLines}
       widthSize={widthSize}
       sprite={sprite}
-    />
+    >
+      {sprite ? <img src={`${sprite != '' ? 'assets/' + sprite : ''}`} /> : ''}
+    </MapFieldStyled>
   )
 }
 
