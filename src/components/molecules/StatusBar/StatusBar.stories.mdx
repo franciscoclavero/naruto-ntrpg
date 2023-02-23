@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import StatusBar from './'
+
+<Meta title='Components/StatusBar' component={StatusBar} />
+
+# Barra de Status Gerais
+
+Mostrará os status utilizaveis in-game, como stamina e chakra.
+
+<ArgsTable of={StatusBar} />
+
+<Canvas>
+  <Story
+    name='StatusBar Component'
+    args={{
+      textContent: 'Chakra',
+      maxValue: 5,
+      actualValue: 3,
+      color: '#007BFF',
+    }}
+  >
+    {(args) => <StatusBar {...args} />}
+  </Story>
+</Canvas>

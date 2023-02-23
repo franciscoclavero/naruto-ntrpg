@@ -1,6 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import StatusBarItemArea from '../StatusBarItemArea'
 import StatusBarText from '../StatusBarText'
+
 import { StatusBarBody } from './style.module'
 
 interface IStatusBar {
@@ -20,3 +23,10 @@ const StatusBar = ({ textContent, maxValue, actualValue, color }: IStatusBar) =>
 }
 
 export default StatusBar
+
+StatusBar.propTypes = {
+  textContent: PropTypes.string.isRequired,
+  maxValue: PropTypes.number.isRequired,
+  actualValue: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+}
