@@ -13,6 +13,4 @@ export const ParchmentBody = styled.div<IParchment>`
   width: ${(props) => props.width};
   display: flex;
   justify-content: space-between;
-
-  margin: 25px;
 `

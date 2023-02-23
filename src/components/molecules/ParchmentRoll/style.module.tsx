@@ -6,6 +6,6 @@ export const ParchmentRollStyled = styled.div<IParchmentRoll>`
   height: calc(${(props) => props.height} / 2);
   left: ${(props) => props.left};
   position: relative;
-  top: calc(${(props) => props.height} / 4);
+  top: calc(${(props) => props.height} / 4 - 4px);
   width: 10px;
 `
