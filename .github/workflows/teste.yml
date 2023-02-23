@@ -1,6 +1,0 @@
-# name: Execução de testes
-# on:
-#   push:
-#     branches: [feature/gitactions]
-# jobs:
-
