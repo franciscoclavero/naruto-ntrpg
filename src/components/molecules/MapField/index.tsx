@@ -16,7 +16,7 @@ const MapField = ({ numberLines, numberColumns, widthSize, sprite }: IMapField) 
   const offsetData = useRef<HTMLImageElement>(null)
   const dispatch = useDispatch()
 
-  const handleClick = () => {
+  const handleClickHaveSprite = () => {
     if (offsetData.current != null) {
       const fieldSize = offsetData.current.clientWidth
 
@@ -26,13 +26,17 @@ const MapField = ({ numberLines, numberColumns, widthSize, sprite }: IMapField) 
     }
   }
 
+  const handleClickNoHaveSprite = () => {
+    dispatch(setVisible(false))
+  }
+
   return (
     <MapFieldStyled
       numberColumns={numberColumns}
       numberLines={numberLines}
       widthSize={widthSize}
       sprite={sprite}
-      onClick={handleClick}
+      onClick={sprite === '' ? handleClickNoHaveSprite : handleClickHaveSprite}
     >
       {sprite != '' ? (
         <img ref={offsetData} src={`${sprite != '' ? 'assets/' + sprite : ''}`} />

@@ -32,7 +32,7 @@ const DynamicMenu = ({ options, visibleStorybook }: IDynamicOptions) => {
         backgroundColor='#925362'
         border='2px'
         parchmentCenter={{
-          width: '92px',
+          width: '136px',
           backgroundColor: '#E4D79A',
           borderColor: '#2F3348',
           borderSize: '15px',
