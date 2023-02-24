@@ -27,11 +27,11 @@ const Map = ({ numberLines, numberColumns, widthSize, typeItens }: IMap) => {
   const map: TMap[] = []
 
   useEffect(() => {
-    for (let mapX = 0; mapX < numberLines; mapX += 1) {
+    for (let mapY = 0; mapY < numberLines; mapY += 1) {
       const mapLine: TMap = {}
-      for (let mapY = 0; mapY < numberColumns; mapY += 1) {
-        const key = `${mapX}_${mapY}`
-        const item = typeItens.findIndex((item) => item.posX === mapX && item.posY === mapY)
+      for (let mapX = 0; mapX < numberColumns; mapX += 1) {
+        const key = `${mapY}_${mapX}`
+        const item = typeItens.findIndex((item) => item.posY === mapY && item.posX === mapX)
 
         mapLine[key] = ''
         if (item > -1) mapLine[key] = typeItens[item].sprite

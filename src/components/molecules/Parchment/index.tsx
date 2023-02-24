@@ -10,13 +10,14 @@ interface IParchment {
   height: string
   width: string
   backgroundColor: string
+  border: string
   parchmentCenter: TParchmentLabel
 }
 
-const Parchment = ({ height, width, backgroundColor, parchmentCenter }: IParchment) => {
+const Parchment = ({ height, width, backgroundColor, border, parchmentCenter }: IParchment) => {
   return (
-    <ParchmentBody height={height} width={width} backgroundColor={backgroundColor}>
-      <ParchmentRoll height={height} left='-14px' />
+    <ParchmentBody height={height} border={border} width={width} backgroundColor={backgroundColor}>
+      <ParchmentRoll height={height} left='-10px' />
       <ParchmentCenter
         textContent={parchmentCenter.textContent}
         width={parchmentCenter.width}
@@ -25,7 +26,7 @@ const Parchment = ({ height, width, backgroundColor, parchmentCenter }: IParchme
         borderColor={parchmentCenter.borderColor}
         textSize={parchmentCenter.textSize}
       />
-      <ParchmentRoll height={height} left='14px' />
+      <ParchmentRoll height={height} left='10px' />
     </ParchmentBody>
   )
 }
@@ -36,6 +37,7 @@ Parchment.propTypes = {
   height: PropTypes.string.isRequired,
   width: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
+  border: PropTypes.string.isRequired,
   parchmentCenter: PropTypes.shape({
     width: PropTypes.string.isRequired,
     backgroundColor: PropTypes.string,
@@ -50,6 +52,7 @@ Parchment.defaultProps = {
   height: '',
   width: '',
   backgroundColor: '',
+  border: '',
   parchmentCenter: {
     width: 'Required',
     backgroundColor: 'Required',

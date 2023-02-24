@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas, AgrsTable } from '@storybook/addon-docs'
+import { store } from '../../../redux/store'
+import { Provider } from 'react-redux'
+
+import DynamicMenu from './'
+
+<Meta title='Components/MenuActions' component={DynamicMenu} />
+
+# Menu de Ações
+
+Menu onde terão as ações dos personagens.
+
+<ArgsTable of={DynamicMenu} />
+
+<Canvas>
+  <Story
+    name='Timer Component'
+    args={{
+      options: [
+        {
+          contentText: 'Texto',
+          click: () => {
+            console.log('Ação')
+          },
+        },
+      ],
+      visibleStorybook: true,
+    }}
+  >
+    {(args) => (
+      <Provider store={store}>
+        <DynamicMenu {...args} />
+      </Provider>
+    )}
+  </Story>
+</Canvas>
