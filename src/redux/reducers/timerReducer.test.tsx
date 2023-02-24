@@ -1,9 +1,18 @@
 import '@testing-library/jest-dom'
 import React from 'react'
-import { setInitialPosition, setLabelText, setTime, setWidth } from './reducers/timerReducer'
+import reducer, { setInitialPosition, setLabelText, setTime, setWidth } from './timerReducer'
 
 describe('Testing Redux ', () => {
   const objectTesting = { item: 1, name: 'test' }
+
+  test('should return the initial state', () => {
+    expect(reducer(undefined, { type: undefined })).toEqual({
+      initialPosition: 10,
+      labelText: '',
+      time: 0,
+      width: '',
+    })
+  })
   it('- SetWidth', () => {
     const width = setWidth(objectTesting)
 

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import React from 'react'
 
@@ -18,5 +18,20 @@ describe('DynamicMenuOption component ', () => {
     const menuOptionNode = screen.getByText('Text')
 
     expect(menuOptionNode).toBeInTheDocument()
+  })
+  it('- click', () => {
+    const mock = jest.fn
+    render(
+      <DynamicMenuOption
+        contentText='Text'
+        click={() => {
+          mock
+        }}
+      />,
+    )
+
+    const menuOptionNode = screen.getByText('Text')
+
+    fireEvent.click(menuOptionNode)
   })
 })

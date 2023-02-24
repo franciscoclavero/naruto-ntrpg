@@ -35,7 +35,7 @@ const MapField = ({ numberLines, numberColumns, widthSize, sprite }: IMapField) 
       sprite={sprite}
       onClick={handleClick}
     >
-      {sprite ? <img src={`${sprite != '' ? 'assets/' + sprite : ''}`} /> : ''}
+      {sprite != '' ? <img src={`${sprite != '' ? 'assets/' + sprite : ''}`} /> : ''}
     </MapFieldStyled>
   )
 }

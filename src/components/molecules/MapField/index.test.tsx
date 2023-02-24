@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import React from 'react'
 
@@ -17,5 +17,38 @@ describe('MapField component ', () => {
     const mapFieldNodes = container.getElementsByTagName('div')
 
     expect(mapFieldNodes.length).toBe(1)
+  })
+
+  it('- img', () => {
+    const { container } = render(
+      <Provider store={store}>
+        <MapField
+          numberColumns={1}
+          numberLines={1}
+          sprite='characters/sasuke.png'
+          widthSize='80px'
+        />
+      </Provider>,
+    )
+
+    const mapFieldImgNodes = container.getElementsByTagName('img')
+
+    expect(mapFieldImgNodes.length).toBe(1)
+  })
+
+  it('- img click', () => {
+    const { container } = render(
+      <Provider store={store}>
+        <MapField
+          numberColumns={1}
+          numberLines={1}
+          sprite='characters/sasuke.png'
+          widthSize='80px'
+        />
+      </Provider>,
+    )
+
+    const mapFieldImgNode = container.getElementsByTagName('img')[0]
+    fireEvent.click(mapFieldImgNode)
   })
 })
