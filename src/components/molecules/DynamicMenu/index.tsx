@@ -27,9 +27,10 @@ const DynamicMenu = ({ options, visibleStorybook }: IDynamicOptions) => {
       visible={visibleStorybook ? visibleStorybook : characterMenu.visible}
     >
       <Parchment
-        width='300px'
+        width='320px'
         height='50px'
         backgroundColor='#925362'
+        border='2px'
         parchmentCenter={{
           width: '92px',
           backgroundColor: '#E4D79A',

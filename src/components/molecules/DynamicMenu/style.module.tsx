@@ -7,6 +7,9 @@ interface IDynamicMenuCharacter {
 }
 
 export const DynamicMenuArea = styled.div<IDynamicMenuCharacter>`
+  display: ${(props) => {
+    return props.visible ? 'block' : 'none'
+  }};
   position: absolute;
   opacity: ${(props) => {
     return props.visible ? '1' : '0'

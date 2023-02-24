@@ -19,7 +19,7 @@ export const DynamicMenuContentAreaStyled = styled.div<IMenuContentArea>`
   max-height: 0px;
 
   ${(props) => {
-    return props.visible ? 'animation: open 1.5s ease 0.5s 1 normal forwards;' : '0'
+    return props.visible ? 'animation: open 0.3s ease 0.3s 1 normal forwards;' : '0'
   }};
 
   @keyframes open {
