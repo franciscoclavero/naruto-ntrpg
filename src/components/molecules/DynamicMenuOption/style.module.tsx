@@ -10,6 +10,6 @@ export const DynamicMenuOptionStyled = styled.div`
   text-align: center;
 
   &:hover {
-    background-color: rgba(191, 191, 191, 0.7);
+    background-color: rgb(128, 128, 128, 0.8);
   }
 `

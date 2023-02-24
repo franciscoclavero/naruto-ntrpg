@@ -1,12 +1,15 @@
 import React from 'react'
+import { useAppSelector } from '../../../redux/hooks/useSelector'
 import { IDynamicOptions } from '../DynamicMenu'
 import DynamicMenuOption from '../DynamicMenuOption'
 
 import { DynamicMenuContentAreaStyled } from './style.module'
 
 const DynamicMenuContentArea = ({ options }: IDynamicOptions) => {
+  const characterMenu = useAppSelector((store) => store.characterMenu)
+
   return (
-    <DynamicMenuContentAreaStyled>
+    <DynamicMenuContentAreaStyled visible={characterMenu.visible}>
       {options.map((item) => {
         return (
           <DynamicMenuOption
