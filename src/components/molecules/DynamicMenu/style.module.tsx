@@ -15,7 +15,7 @@ export const DynamicMenuArea = styled.div<IDynamicMenuCharacter>`
   top: ${(props) => props.top}px;
   left: ${(props) => props.left}px;
   ${(props) => {
-    return props.visible ? 'animation: myAnim 1s ease 0s 1 normal forwards;' : '0'
+    return props.visible ? 'animation: myAnim 0.9ms ease 0s 1 normal forwards;' : '0'
   }};
 
   @keyframes myAnim {

@@ -5,11 +5,13 @@ import DynamicMenuOption from '../DynamicMenuOption'
 
 import { DynamicMenuContentAreaStyled } from './style.module'
 
-const DynamicMenuContentArea = ({ options }: IDynamicOptions) => {
+const DynamicMenuContentArea = ({ options, visibleStorybook }: IDynamicOptions) => {
   const characterMenu = useAppSelector((store) => store.characterMenu)
 
   return (
-    <DynamicMenuContentAreaStyled visible={characterMenu.visible}>
+    <DynamicMenuContentAreaStyled
+      visible={visibleStorybook ? visibleStorybook : characterMenu.visible}
+    >
       {options.map((item) => {
         return (
           <DynamicMenuOption

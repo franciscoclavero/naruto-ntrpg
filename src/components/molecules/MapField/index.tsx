@@ -13,7 +13,7 @@ export interface IMapField {
 }
 
 const MapField = ({ numberLines, numberColumns, widthSize, sprite }: IMapField) => {
-  const offsetData = useRef<HTMLDivElement>(null)
+  const offsetData = useRef<HTMLImageElement>(null)
   const dispatch = useDispatch()
 
   const handleClick = () => {
@@ -28,14 +28,17 @@ const MapField = ({ numberLines, numberColumns, widthSize, sprite }: IMapField) 
 
   return (
     <MapFieldStyled
-      ref={offsetData}
       numberColumns={numberColumns}
       numberLines={numberLines}
       widthSize={widthSize}
       sprite={sprite}
       onClick={handleClick}
     >
-      {sprite != '' ? <img src={`${sprite != '' ? 'assets/' + sprite : ''}`} /> : ''}
+      {sprite != '' ? (
+        <img ref={offsetData} src={`${sprite != '' ? 'assets/' + sprite : ''}`} />
+      ) : (
+        ''
+      )}
     </MapFieldStyled>
   )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import { useAppSelector } from '../../../redux/hooks/useSelector'
+import PropTypes from 'prop-types'
+
 import DynamicMenuContentArea from '../DynamicMenuContentArea'
 import Parchment from '../Parchment'
 
@@ -12,16 +14,17 @@ type TDynamicOption = {
 
 export interface IDynamicOptions {
   options: TDynamicOption[]
+  visibleStorybook?: boolean
 }
 
-const DynamicMenu = ({ options }: IDynamicOptions) => {
+const DynamicMenu = ({ options, visibleStorybook }: IDynamicOptions) => {
   const characterMenu = useAppSelector((store) => store.characterMenu)
 
   return (
     <DynamicMenuArea
       left={characterMenu.left}
       top={characterMenu.top}
-      visible={characterMenu.visible}
+      visible={visibleStorybook ? visibleStorybook : characterMenu.visible}
     >
       <Parchment
         width='300px'
@@ -36,11 +39,26 @@ const DynamicMenu = ({ options }: IDynamicOptions) => {
           textSize: '',
         }}
       />
-      <DynamicMenuContentArea options={options} />
+      <DynamicMenuContentArea options={options} visibleStorybook={visibleStorybook} />
     </DynamicMenuArea>
   )
 }
 
 export default DynamicMenu
 
-// pegar o offsetLeft e offsetTop
+DynamicMenu.proptypes = {
+  options: PropTypes.shape({
+    contentText: PropTypes.string.isRequired,
+    click: PropTypes.func.isRequired,
+  }),
+  visibleStorybook: PropTypes.bool,
+}
+
+DynamicMenu.defaultProps = {
+  options: {
+    contentText: 'Texto',
+    click: () => {
+      console.log('Ação')
+    },
+  },
+}

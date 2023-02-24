@@ -1,4 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { store } from '../../../redux/store'
+import { Provider } from 'react-redux'
+
 import Map from './'
 import MapField from '../MapField'
 
@@ -26,7 +29,11 @@ O mapa é onde todo o jogo vai ocorrer, ele é o responsável por mostrar a loca
       ],
     }}
   >
-    {(args) => <Map {...args} />}
+    {(args) => (
+      <Provider store={store}>
+        <Map {...args} />
+      </Provider>
+    )}
   </Story>
 </Canvas>
 
@@ -42,6 +49,10 @@ Onde cada área do mapa recebe um field, como o componente abaixo:
       sprite: '',
     }}
   >
-    {(args) => <MapField {...args} />}
+    {(args) => (
+      <Provider store={store}>
+        <MapField {...args} />
+      </Provider>
+    )}
   </Story>
 </Canvas>
