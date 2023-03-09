@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const RememberUserStyled = styled.div`
   margin: auto;
+  margin-top: 0px;
   height: 15px;
   width: 95%;
 `
